@@ -24,7 +24,7 @@ DELETE               | /pessoas/:id     | Apaga uma pessoa pelo id              
 
 ### Login
 
-METODOS (privado)    | ENDPOINTS        | DESCRIÇÃO                                                                                  |
+METODOS (publicos)   | ENDPOINTS        | DESCRIÇÃO                                                                                  |
 -------------------- | -----------------| -------------------------------------------------------------------------------------------|
 POST                 | /entrar          | Permite um usuario existente no sistema gerar um token para acessar os endpoints privados  |
 POST                 | /cadastrar       | Cria um novo usuario                                                                       |
