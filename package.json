@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts"
+    "dev": "ts-node-dev ./src/index.ts",
+    "lint": "eslint --ext .ts,.js,.vue --fix ."
   },
   "repository": {
     "type": "git",
