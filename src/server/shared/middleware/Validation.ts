@@ -16,9 +16,7 @@ type TValidation = (getAllSchemas: TGetAllSchemas) => RequestHandler
 
 export const validation: TValidation = (getAllSchemas) => async (req, res, next) => {
   const schemas = getAllSchemas(schema => schema)
-  const listErrors: Record<string, Record<string, string>> = {
-
-  }
+  const listErrors: Record<string, Record<string, string>> = {}
 
   Object.entries(schemas).forEach(([key, schema]) => {
     try {
