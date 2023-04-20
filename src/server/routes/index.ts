@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
   return res.status(StatusCodes.OK).send('Olá, estou funcionando! ( * w * )')
 })
 
+router.get('/cidades', CitiesControllers.getAllValidation, CitiesControllers.GetAll)
 router.post('/cidades', CitiesControllers.createValidation, CitiesControllers.Create)
 
 
