@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/cidades', CitiesControllers.getAllValidation, CitiesControllers.GetAll)
+router.get('/cidades/:id', CitiesControllers.getByIdValidation, CitiesControllers.GetById)
 router.post('/cidades', CitiesControllers.createValidation, CitiesControllers.Create)
 
 
