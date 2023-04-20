@@ -5,23 +5,15 @@ import { validation } from '../../shared/middleware/Validation'
 
 interface ICity {
   name: string,
-  state: string,
-}
-
-interface IFilter {
-  filter?: string,
 }
 
 export const createValidation = validation((getSchema) => ({
   body: getSchema<ICity>(yup.object().shape({
-    name: yup.string().required().min(3),
-    state: yup.string().required().min(3),
-  })),
-  query: getSchema<IFilter>(yup.object().shape({
-    filter: yup.string().optional().min(3),
+    name: yup.string().required().min(3)
   }))
 }))
 
 export const Create = async (req: Request<{}, {}, ICity>, res: Response) => {
-  return res.status(StatusCodes.ACCEPTED).send('cidade cadastrada com sucesso')
+  console.log(req.body)
+  return res.status(StatusCodes.METHOD_NOT_ALLOWED).send('Não implementado')
 }
