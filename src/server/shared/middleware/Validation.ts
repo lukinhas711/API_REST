@@ -1,18 +1,17 @@
 import { RequestHandler } from 'express'
-import { ValidationError, Schema } from 'yup'
+import { ValidationError, ObjectSchema, Maybe, AnyObject } from 'yup'
 import { StatusCodes } from 'http-status-codes'
 
 
 type TProperty = 'body' | 'header' | 'params' | 'query'
 
-type TGetSchema = <T>(schema: Schema<T>) => Schema<any>
+type TGetSchema = <T extends Maybe<AnyObject>>(schema: ObjectSchema<T>) => ObjectSchema<any>
 
-type TAllSchemas = Record<TProperty, Schema<any>>
+type TAllSchemas = Record<TProperty, ObjectSchema<any>>
 
 type TGetAllSchemas = (getSchema: TGetSchema) => Partial<TAllSchemas>
 
 type TValidation = (getAllSchemas: TGetAllSchemas) => RequestHandler
-
 
 
 export const validation: TValidation = (getAllSchemas) => async (req, res, next) => {
